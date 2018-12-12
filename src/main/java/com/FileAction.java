@@ -1,5 +1,7 @@
 package com;
 
+import org.apache.commons.io.FilenameUtils;
+
 import java.io.*;
 
 public class FileAction {
@@ -7,26 +9,30 @@ public class FileAction {
     public String getLargestWord(String file_location) throws Exception {
 
         File tempFile = new File(file_location);
-        if(tempFile.exists()) {
-            if (tempFile.length() != 0) {
-                BufferedReader reader;
-                reader = new BufferedReader(new FileReader(file_location));
-                String line = reader.readLine().trim().toLowerCase();
-                String largestWord = line;
-                while (line != null) {
-                    if (line.length() > largestWord.length()) {
-                        largestWord = line;
+        if( FilenameUtils.getExtension(file_location).equals("txt")){
+            if(tempFile.exists()) {
+                if (tempFile.length() != 0) {
+                    BufferedReader reader;
+                    reader = new BufferedReader(new FileReader(file_location));
+                    String line = reader.readLine().trim().toLowerCase();
+                    String largestWord = line;
+                    while (line != null) {
+                        if (line.length() > largestWord.length()) {
+                            largestWord = line;
+                        }
+                        line = reader.readLine();
                     }
-                    line = reader.readLine();
-                }
-                reader.close();
-                System.out.println("Largest Word from file: "+ tempFile.getName() + ", is: " + largestWord);
-                return largestWord;
-            } else
-                throw new Exception("File is Empty");
+                    reader.close();
+                    System.out.println("Largest Word from file: "+ tempFile.getName() + ", is: " + largestWord);
+                    return largestWord;
+                } else
+                    throw new Exception("File is Empty");
+            }
+            else
+                throw new Exception("File does not exist");
         }
         else
-            throw new Exception("File does not exist");
+            throw new Exception("File Format is not supported");
     }
 
     public String getLargestWordTransposed(String file_location) throws Exception {

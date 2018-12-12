@@ -252,6 +252,28 @@ public class FileActionTest {
     }
 
     /**
+     * Test using a file format not supported {@link FileAction#getLargestWord(String)}
+     * @param fileLocationFileNotSupported - location of the file used in the test
+     * @throws Exception - Exception that can be thrown from the method under test
+     */
+    @Test(expectedExceptions = Exception.class, expectedExceptionsMessageRegExp ="File Format is not supported")
+    @Parameters({"fileLocationFileNotSupported"})
+    public void get_LargestWord_File_NotSupported(String fileLocationFileNotSupported) throws Exception {
+        fileAction.getLargestWord(fileLocationFileNotSupported);
+    }
+
+    /**
+     * Test using a file format not supported {@link FileAction#getLargestWordTransposed(String)}
+     * @param fileLocationFileNotSupported - location of the file used in the test
+     * @throws Exception - Exception that can be thrown from the method under test
+     */
+    @Test(expectedExceptions = Exception.class, expectedExceptionsMessageRegExp ="File Format is not supported")
+    @Parameters({"fileLocationFileNotSupported"})
+    public void get_LargestWord_Transposed_File_NotSupported(String fileLocationFileNotSupported) throws Exception {
+        fileAction.getLargestWordTransposed(fileLocationFileNotSupported);
+    }
+
+    /**
      * Teardown the test object after running all the test cases
      */
     @AfterMethod
