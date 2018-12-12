@@ -11,7 +11,10 @@
 - If you want to generate documentation for unit test, you can run the command in the console: mvn clean javadoc:test-javadoc
 - documentation will be generated here: /target/site/testapidocs/index.html
 
-# video of the execution
-https://www.screencast.com/t/hHnIyH4pK
+# video of the execution - use chrome for watching the videos
+
+https://www.screencast.com/t/hHnIyH4pK - using maven
+
+https://www.screencast.com/t/tnioMkG8aAIa - using IDE: IntelliJ
 
 
