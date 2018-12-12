@@ -17,4 +17,6 @@ https://www.screencast.com/t/hHnIyH4pK - using maven
 
 https://www.screencast.com/t/tnioMkG8aAIa - using IDE: IntelliJ
 
+https://www.screencast.com/t/93NA15KvnGR - Structure of the project
+
 
