@@ -2,9 +2,9 @@
 
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="FileAction" >
+<suite name="FileAction Suite" >
 
-    <test name="FileAction">
+    <test name="FileAction Test">
 
         <parameter name="fileLocationHappyPath"  value="src/test/resources/fileHappyPath.txt"/>
         <parameter name="expectedLargestWordHappyPath"  value="abcde"/>
@@ -29,6 +29,14 @@
         <parameter name="fileLocationSpecialcharacters"  value="src/test/resources/fileSpecialcharacters.txt"/>
         <parameter name="expectedLargestWordSpecialcharacters"  value="abc#$%)*+@d"/>
         <parameter name="expectedTransposedWordSpecialcharacters"  value="d@+*)%$#cba"/>
+
+        <parameter name="fileLocationLineWithSpaces"  value="src/test/resources/fileLineWithSpaces.txt"/>
+        <parameter name="expectedLargestWordLineWithSpaces"  value="abcde"/>
+        <parameter name="expectedTransposedWordLineWithSpaces"  value="edcba"/>
+
+        <parameter name="fileLocationStartWithBlankLines"  value="src/test/resources/fileStartWithBlankLines.txt"/>
+        <parameter name="expectedLargestWordStartWithBlankLines"  value="abcde"/>
+        <parameter name="expectedTransposedWordStartWithBlankLines"  value="edcba"/>
 
         <classes>
             <class name="test.FileActionTest"/>
